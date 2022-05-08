@@ -39,13 +39,13 @@ public class TwoDPointDemo {
         Setxy st = new Setxy();
         MyPoint m1 = new MyPoint();
         MyPoint m2 = new MyPoint(st.getX(), st.getY());
-        MyPoint m3 = new MyPoint(st.getX(), st.getY());
+        //MyPoint m3 = new MyPoint(st.getX(), st.getY());
 
         System.out.printf("distance (%.1f,%.1f) to (%.1f,%.1f) : ", m1.x, m1.y, m2.x, m2.y);
         System.out.println(m1.findDistance(m2));
 
-        System.out.printf("distance (%.1f,%.1f) to (%.1f,%.1f) : ", m2.x, m2.y, m3.x, m3.y);
-        System.out.println(m2.findDistance(m3));
+        //System.out.printf("distance (%.1f,%.1f) to (%.1f,%.1f) : ", m2.x, m2.y, m3.x, m3.y);
+        //System.out.println(m2.findDistance(m3));
     }
 }
 
