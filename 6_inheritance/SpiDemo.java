@@ -81,6 +81,7 @@ class student {
 public class SpiDemo {
     public static void main(String[] args) {
         double a;
+        //enter number of student in cmd
         a = Double.parseDouble(args[0]);
         student s1 = new student();
         for (int j = 0; j < a; j++) {
