@@ -10,10 +10,12 @@ class student {
     int id_no;
     int no_of_subjects_registered;
     String[] subject_code = new String[10];
-    int[] subject_credits = new int[10];
+    double[] subject_credits = new double[10];
     String[] grade_obtained = new String[10];
     double[] total = new double[10];
     double spi = 0;
+    double crd = 0;
+    double tl = 0;
 
     Scanner sc = new Scanner(System.in);
 
@@ -24,21 +26,24 @@ class student {
         no_of_subjects_registered = sc.nextInt();
 
         for (int i = 0; i < no_of_subjects_registered; i++) {
-            System.out.println("Enter Subject Code : ");
-            subject_code[i] = sc.nextLine();
-            System.out.println("Enter Subject Credits : ");
-            subject_credits[i] = sc.nextInt();
-            System.out.println("Enter Grade Obtained : ");
-            grade_obtained[i] = sc.nextLine();
+            System.out.println("Enter" + (i + 1) + "Subject Code : ");
+            subject_code[i] = sc.next();
+            System.out.println("Enter" + (i + 1) + "Subject Credits : ");
+            subject_credits[i] = sc.nextDouble();
+            System.out.println("Enter" + (i + 1) + "Grade Obtained : ");
+            grade_obtained[i] = sc.next();
         }
-    }   
+    }
 
     void displayStudentDetails() {
+        System.out.println("id no : " + id_no);
         for (int i = 0; i < no_of_subjects_registered; i++) {
-            System.out.println("id no : " + id_no);
-            System.out.println("subject code : " + subject_code);
-            System.out.println("subject credits : " + subject_credits);
-            System.out.println("grade obtained : " + grade_obtained);
+            System.out.println("subject code : " + subject_code[i]);
+            System.out.println("");
+            System.out.println("subject credits : " + subject_credits[i]);
+            System.out.println("");
+            System.out.println("grade obtained : " + grade_obtained[i]);
+            System.out.println("");
         }
     }
 
@@ -65,8 +70,10 @@ class student {
             }
         }
         for (int i = 0; i < no_of_subjects_registered; i++) {
-            spi = total[i] / subject_credits[i];
+            tl += total[i];
+            crd += subject_credits[i];
         }
+        spi = tl / crd;
         System.out.println("spi : " + spi);
     }
 }
@@ -81,9 +88,10 @@ public class SpiDemo {
             s1.getDetails();
             s1.calculateStudentSpi();
         }
-        for (int k = 0; k < a; k++) {
+        /*for (int k = 0; k < a; k++) {
             System.out.println("Enter Details Of " + (k + 1) + " Student");
             s1.displayStudentDetails();
-        }
+        }*/
     }
 }
+
